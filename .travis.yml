@@ -73,3 +73,4 @@ before_script:
 script:
 - cmake --build _builds
 - cmake --build _builds --target test -- ARGS=--verbose
+
