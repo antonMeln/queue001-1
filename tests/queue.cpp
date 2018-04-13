@@ -1,5 +1,5 @@
 #include <catch.hpp>
-#include "queue.cpp"
+#include "queue.hpp"
 
 TEST_CASE("push")
 {
