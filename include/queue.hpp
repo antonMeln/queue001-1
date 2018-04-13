@@ -1,6 +1,5 @@
-# queue001
-
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -17,6 +16,12 @@ public:
 		head = nullptr;
 		tail = nullptr;
 	}
+	
+	queue_t(queue_t const & other) {
+		for (node_t * tmp = other.head; tmp != nullptr; tmp = tmp->next) {
+			push(n->value);
+		}
+	}
 
 	~queue_t() {
 		if (head == nullptr &&  tail == nullptr) {
@@ -29,19 +34,6 @@ public:
 			tail = nullptr;
 			return;
 		}
-		/*else if (head == tail) {
-			delete head;
-			head = nullptr;
-			tail = nullptr;
-			return;
-		}
-		else if (head == nullptr &&  tail == nullptr) {
-			T tmp;
-			while (head != nullptr) tmp = pop();
-			head = nullptr;
-			tail = nullptr;
-			return;
-		}*/
 	}
 
 	void push(T value) {
@@ -61,7 +53,7 @@ public:
 
 	T pop() {
 		if (head == nullptr) {
-			throw "empty queue";
+			throw logic_error("empty queue");
 		}
 		else {
 			T result;
@@ -92,39 +84,3 @@ public:
 	}
 };
 
-int main()
-{
-	int data;
-	char oper;
-	queue_t<int> list;
-
-	cin >> oper;
-
-	while (oper != 'q') {
-
-		switch (oper)
-		{
-		case '=':
-			list.print();
-			break;
-
-		case '+':
-			cin >> data;
-			list.push(data);
-			list.print();
-			break;
-
-		case '-':
-			int tmp = list.pop();
-			list.print();
-			break;
-		}
-
-		cin >> oper;
-	}
-
-
-	cin.get();
-	cin.get();
-	return 0;
-}
