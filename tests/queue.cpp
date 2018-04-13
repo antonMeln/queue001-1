@@ -1,6 +1,4 @@
 #include <catch.hpp>
-#include <sstream>
-
 #include "queue.cpp"
 
 TEST_CASE("push")
@@ -23,9 +21,12 @@ TEST_CASE("pop")
  queue.push(1);
  queue.push(2);
  queue.push(3);
- REQUIRE (1 == queue.pop());
- REQUIRE (2 == queue.pop());
- REQUIRE (3 == queue.pop());
+ int tmp = queue.pop();
+ REQUIRE (tmp == 1);
+ tmp = queue.pop();
+ REQUIRE (tmp == 2);
+ tmp = queue.pop();
+ REQUIRE (tmp == 3);
  REQUIRE_THROWS(queue.pop());
 }
 
