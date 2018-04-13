@@ -19,7 +19,7 @@ public:
 	
 	queue_t(queue_t const & other) {
 		for (node_t * tmp = other.head; tmp != nullptr; tmp = tmp->next) {
-			push(n->value);
+			push(tmp->value);
 		}
 	}
 
