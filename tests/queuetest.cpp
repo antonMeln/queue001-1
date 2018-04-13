@@ -38,8 +38,8 @@ TEST_CASE("copy")
  queue1.push(3);
  
  queue_t<int> queue2(queue1);
- REQUIRE( queue.hvalue() == 1);
- REQUIRE( queue.tvalue() == 3);
+ REQUIRE( queue2.hvalue() == 1);
+ REQUIRE( queue2.tvalue() == 3);
  
 }
 
