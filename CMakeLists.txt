@@ -14,6 +14,8 @@ option(BUILD_TESTS "Build tests" OFF)
 option(BUILD_EXAMPLES "Build Examples" OFF)
 
 add_library(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/include/queue.cpp")
+add_executable(mainfile "${PROJECT_SOURCE_DIR}/sources/queue.cpp")
+target_link_libraries(mainfile ${PROJECT_NAME})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 if(BUILD_TESTS)
