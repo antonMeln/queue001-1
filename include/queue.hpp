@@ -82,5 +82,12 @@ public:
 		cout << endl;
 		cout << endl;
 	}
+	
+	T hvalue() const {
+		return head->value;
+	}
+	T tvalue() const {
+		return tail->value;
+	}
 };
 
