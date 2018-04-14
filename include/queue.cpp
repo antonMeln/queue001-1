@@ -17,7 +17,9 @@ public:
 		tail = nullptr;
 	}
 	
-	queue_t(queue_t const & other) {
+	queue_t(queue_t const & other)
+    : queue_t()
+    {
 		for (node_t * tmp = other.head; tmp != nullptr; tmp = tmp->next) {
 			push(tmp->value);
 		}
